@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="content">
+      <Widget class="demo-widget" />
+      <Reviews class="demo-widget" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Widget from "./components/Widget.vue";
+import Reviews from "./components/Reviews.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Widget,
+    Reviews,
+  },
+};
 </script>
 
 <style>
@@ -21,8 +25,23 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  box-sizing: border-box;
+  padding: 8px;
+  height: 100vh;
+  width: 100vw;
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  height: 100%;
+}
+
+.demo-widget {
+  margin: 8px;
 }
 </style>
