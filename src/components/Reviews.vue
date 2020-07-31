@@ -2,7 +2,6 @@
   <div class="component">
     <strong>Latest Reviews</strong>
     <div class="reviews">
-      <!-- <transition-group name="list" tag="div"> -->
       <template v-for="review in reviews">
         <div class="review" v-bind:key="review.id">
           <div class="stars-and-user">
@@ -21,7 +20,9 @@
           <div class="text">{{ review.review }}</div>
         </div>
       </template>
-      <!-- </transition-group> -->
+      <div v-if="!reviews.length">
+        Be the first to add a review!
+      </div>
     </div>
   </div>
 </template>
